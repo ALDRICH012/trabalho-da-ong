@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Lista de Alimentos</h1>
+  <ul>
+    {% for alimento in alimentos %}
+      <li>{{ alimento.nome }} ({{ alimento.quantidade }})</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

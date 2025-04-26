@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-center mb-4">Lista de Doações</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Alimentos</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for alimento in alimentos %}
+                    <li class="list-group-item">
+                        {{ alimento.nome }} - {{ alimento.quantidade }} unidades
+                        <br>
+                        <small>Validade: {{ alimento.data_validade }}</small>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item">Nenhum alimento cadastrado</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Roupas</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for roupa in roupas %}
+                    <li class="list-group-item">
+                        {{ roupa.tipo }} - Tamanho: {{ roupa.tamanho }}
+                        <br>
+                        <small>Quantidade: {{ roupa.quantidade }}</small>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item">Nenhuma roupa cadastrada</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Itens de Higiene</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for item in higiene %}
+                    <li class="list-group-item">
+                        {{ item.tipo }}
+                        <br>
+                        <small>Quantidade: {{ item.quantidade }}</small>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item">Nenhum item de higiene cadastrado</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

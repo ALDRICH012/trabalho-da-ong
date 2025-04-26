@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo à ONG Doações</h1>
+    <p class="lead">Faça a diferença na vida de muitas pessoas</p>
+    
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Doar Alimentos</h5>
+                    <p class="card-text">Ajude com doações de alimentos não perecíveis.</p>
+                    <a href="{% url 'nova_doacao_alimento' %}" class="btn btn-primary">Doar Alimentos</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Doar Roupas</h5>
+                    <p class="card-text">Contribua com roupas em bom estado.</p>
+                    <a href="{% url 'nova_doacao_roupa' %}" class="btn btn-primary">Doar Roupas</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Doar Itens de Higiene</h5>
+                    <p class="card-text">Ajude com produtos de higiene pessoal.</p>
+                    <a href="{% url 'nova_doacao_higiene' %}" class="btn btn-primary">Doar Itens de Higiene</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
